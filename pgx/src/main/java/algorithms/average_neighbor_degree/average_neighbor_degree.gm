@@ -1,0 +1,21 @@
+procedure average_neighbor_degree(G: graph; avgDeg: nodeProp<double>) : int {
+
+    G.avgDeg = 0;
+
+    /*
+        For each node, calculate mean of neighbour degree
+    */
+
+    foreach(n : G.nodes) {
+        double c = 0;
+        foreach(v : n.inNbrs) {
+            c += v.numInNbrs() + v.numOutNbrs();
+        }
+        for(v : n.outNbrs) {
+            c += v.numInNbrs() + v.numOutNbrs();
+        }
+        n.avgDeg = c/(n.numInNbrs() + n.numOutNbrs());
+    }
+
+    return 0;
+}

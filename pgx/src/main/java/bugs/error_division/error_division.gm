@@ -1,0 +1,31 @@
+procedure current_flow_closeness(G: graph; closeness: nodeProp<double>) : int {
+
+    G.closeness = 0;
+
+
+    // execute some nested for loop
+
+    for(v : G.nodes) {
+        for(w : G.nodes) {
+            v.closeness <= v.closeness + 1;
+            w.closeness <= w.closeness + 1;
+        }
+    }
+
+    // directly assign value
+
+    for(v : G.nodes) {
+        v.closeness = 5;
+    }
+
+    // behavior of operators not consistent (+,-,*,/)
+
+    for(v : G.nodes) {
+        double c = v.closeness;
+        v.closeness = (1 / c);
+    }
+
+
+    return 0;
+
+}

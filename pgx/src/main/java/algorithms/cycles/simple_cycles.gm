@@ -1,0 +1,77 @@
+procedure simple_cycles(G: graph, num: int, size : int, id : nodeProp<int>, root : node;
+     cycleProp : nodeProp<vect<int>[size]>) : int {
+
+    nodeProp<bool> visited;
+    nodeProp<bool> inStack;
+    G.visited = false;
+    G.inStack = false;
+
+    vect<int>[size] cycle;
+    int j = 0;
+    while(j < size) {
+        cycle[j] = -1;
+        j++;
+    }
+
+    vect<int>[num] stack;
+
+    int sp = 0;
+
+    int cc = 0;
+    bool test = false;
+
+    for(t : G.nodes) (!t.visited) {
+
+        inDFS(n : G.nodes from t) [!n.inStack] {
+            for(k : n.outNbrs) {
+                if(k.inStack) {
+                    //test = true;
+                    int i = sp-1;
+                    cycle[cc] = n.id;
+                    cc = cc + 1;
+
+                    /*
+                    while(i >= 0 && stack[i] != k.id) {
+                        cycle[cc] = stack[i];
+                        cc = cc + 1;
+                        i--;
+                    }
+                    cycle[cc] = 999;
+                    cc = cc + 1;
+                    cycle[cc] = -1;
+                    cc = cc + 1;
+                    */
+
+                     while(i >= 0) {
+                        cycle[cc] = stack[i];
+                        cc = cc + 1;
+                        if(stack[i] == k.id) {
+                            i = -1;
+                            //cycle[cc] = 999;
+                        } else {
+                            i--;
+                        }
+
+                    }
+
+                    cycle[cc] = -1;
+                    cc = cc + 1;
+
+                }
+            }
+
+            n.inStack = true;
+            stack[sp] = n.id;
+            sp++;
+        }
+
+        inPost {
+            n.inStack = false;
+            n.visited = true;
+            sp--;
+        }
+    }
+
+    root.cycleProp = cycle;
+    return cc;
+}

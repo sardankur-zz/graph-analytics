@@ -1,0 +1,181 @@
+procedure clique_removal(G: graph; c_i : nodeSet(G), i_i : nodeSet(G)) : int {
+    nodeSet(G) sub;
+    nodeSet(G) nonsub;
+    int ret;
+    int j = 10;
+
+    for(v : G.nodes) {
+        sub.add(v);
+    }
+
+    ret = sub.size();
+
+    // int ret = ramsey(G, 2, sub, nonsub, c_i, i_i);
+    return ret;
+}
+/*
+local ramsey(G: graph, n : int; sub : nodeSet(G), nonsub : nodeSet(G), c_i : nodeSet(G), i_i : nodeSet(G)) : int {
+
+    int ret;
+
+    bool getNextNode = false;
+    nodeSet(G) nbr;
+    nodeSet(G) nnbr;
+
+    nodeSet(G) c1;
+    nodeSet(G) c2;
+    nodeSet(G) i1;
+    nodeSet(G) i2;
+
+    nodeSet(G) nbrnongraph;
+    nodeSet(G) nnbrnongraph;
+
+    node(G) nextNode;
+
+    int n1 = 0;
+    int n2 = 0;
+
+    int j = 0;
+
+    ret = 4;
+
+    if (sub.size() != 0 && n > 0) {
+
+        j = 0;
+
+        ret = 2;
+
+        for(v : sub.items)  {
+            getNextNode = true;
+            nextNode = v;
+            ret = 1;
+        }
+
+        j = 0;
+
+        for(v : nextNode.nbrs) {
+            if(!nonsub.has(v)) {
+                nbr.add(v);
+            }
+        }
+
+        j = 0;
+
+
+
+        for(v : G.nodes) {
+            if(!nbr.has(v)) {
+                nbrnongraph.add(v);
+            }
+        }
+
+        j = 0;
+
+        for(v : sub.items) {
+            if(v != nextNode && !(nbr.has(v)) && !(nonsub.has(v))) {
+                nnbr.add(v);
+            }
+        }
+
+        j = 0;
+
+        for(v : G.nodes) {
+            if(!nnbr.has(v)) {
+                nnbrnongraph.add(v);
+            }
+        }
+
+        j = 0;
+
+        // n1 = ramsey(G, n-1, nbr, nbrnongraph, c1, i1);
+
+        // n2 = ramsey(G, n-1, nnbr, nnbrnongraph, c2, i2);
+
+        j = 0;
+
+        for(v : sub.items) {
+            // extremely weird way to set it, but direct setting did not work.
+            c1.add(nextNode);
+            i2.add(nextNode);
+        }
+
+        j = 0;
+
+        nodeSet(G) c_m;
+        if(c1.size() >= c2.size()) {
+            c_m = c1;
+        } else {
+            c_m = c2;
+        }
+
+        j = 0;
+
+        for(v : c_m.items) {
+            c_i.add(v);
+        }
+
+        j = 0;
+
+        nodeSet(G) i_m;
+        if(i1.size() >= i2.size()) {
+            i_m = i1;
+        } else {
+            i_m = i2;
+        }
+
+        j = 0;
+
+        for(v : i_m.items) {
+            i_i.add(v);
+        }
+    }
+
+    return ret;
+}
+
+*/
+/*
+
+procedure clique_removal(G: graph; c_i : nodeSet(G), i_i : nodeSet(G)) : int {
+    nodeSet(G) sub;
+    nodeSet(G) nonsub;
+    for(v : G.nodes) {
+        sub.add(v);
+    }
+
+    int ret = ramsey(G, 2, i_i);
+
+    // int ret = ramsey(G, 2, sub, nonsub, c_i, i_i);
+    return ret;
+}
+
+local ramsey(G: graph, n : int; sub : nodeSet(G)) : int {
+
+    nodeSet(G) nbr;
+    node(G) nextNode;
+    bool getNextNode = false;
+
+    if(n > 0) {
+
+        int j = 0;
+
+        ramsey(G, n-1, nbr);
+
+        for (v : nbr.items) {
+            sub.add(v);
+        }
+
+    } else {
+
+        for(v : G.nodes) (!getNextNode) {
+            getNextNode = true;
+            nextNode = v;
+        }
+
+        sub.add(nextNode);
+    }
+
+    return 0;
+}
+
+*/

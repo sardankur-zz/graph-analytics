@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>graph-analytics</groupId>
+    <artifactId>pgx</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <pgx.version>2.4.0</pgx.version>
+        <pgx.location>/home/ankursarda/Software/pgx-2.4.0</pgx.location>
+        <pgx.jarlocation>shared-memory</pgx.jarlocation>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>javax.json</groupId>
+            <artifactId>javax.json-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!--Adding path for pgx dependencies-->
+        <dependency>
+            <groupId>pgx-gm</groupId>
+            <artifactId>pgx-gm</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-gm-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-engine</groupId>
+            <artifactId>pgx-engine</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-engine-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-spark</groupId>
+            <artifactId>pgx-spark</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-spark-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-compiler_api</groupId>
+            <artifactId>pgx-compiler_api</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-compiler_api-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-pgql</groupId>
+            <artifactId>pgx-pgql</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-pgql-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-hdfs</groupId>
+            <artifactId>pgx-hdfs</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-hdfs-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-file_loaders</groupId>
+            <artifactId>pgx-file_loaders</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-file_loaders-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-loader_api</groupId>
+            <artifactId>pgx-loader_api</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-loader_api-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-algorithms</groupId>
+            <artifactId>pgx-algorithms</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-algorithms-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-runtime</groupId>
+            <artifactId>pgx-runtime</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-runtime-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-spark_loader</groupId>
+            <artifactId>pgx-spark_loader</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-spark_loader-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-common</groupId>
+            <artifactId>pgx-common</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/common/pgx-common-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-api</groupId>
+            <artifactId>pgx-api</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/common/pgx-api-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-shell</groupId>
+            <artifactId>pgx-shell</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/common/pgx-shell-2.4.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>antlr-runtime</groupId>
+            <artifactId>antlr-runtime</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/antlr-runtime-3.5.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>httpclient</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/httpclient-4.3.6.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson-mapper-asl</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/jackson-mapper-asl-1.9.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/guava-14.0.1.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-vfs2</groupId>
+            <artifactId>commons-vfs2</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-vfs2-2.1.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-io-2.5.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>protobuf-java</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/protobuf-java-2.5.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-cli-1.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson-annotations</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/jackson-annotations-2.7.5.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgql-lang-2017.01.12</groupId>
+            <artifactId>pgql-lang-2017.01.12</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/pgql-lang-2017.01.12-4.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>slf4j-api</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/slf4j-api-1.7.6.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>guice</groupId>
+            <artifactId>guice</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/guice-4.1.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-logging-1.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>hadoop-auth-2.6.0</groupId>
+            <artifactId>hadoop-auth-2.6.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/hadoop-auth-2.6.0-cdh5.4.4.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>rxjava-core</groupId>
+            <artifactId>rxjava-core</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/rxjava-core-0.20.7.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>guice-multibindings</groupId>
+            <artifactId>guice-multibindings</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/guice-multibindings-4.1.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>blueprints-core</groupId>
+            <artifactId>blueprints-core</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/blueprints-core-2.3.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>fluent-hc</groupId>
+            <artifactId>fluent-hc</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/fluent-hc-4.4.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson-dataformat-yaml</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/jackson-dataformat-yaml-2.7.5.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>snakeyaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/snakeyaml-1.17.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>jansi</groupId>
+            <artifactId>jansi</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/jansi-1.11.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>htrace-core</groupId>
+            <artifactId>htrace-core</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/htrace-core-3.0.4.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>fastutil-stripped</groupId>
+            <artifactId>fastutil-stripped</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/fastutil-stripped-7.0.12.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson-core-asl</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/jackson-core-asl-1.9.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>aopalliance</groupId>
+            <artifactId>aopalliance</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/aopalliance-1.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-configuration2-jackson</groupId>
+            <artifactId>commons-configuration2-jackson</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-configuration2-jackson-0.6.1.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson-core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/jackson-core-2.7.5.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>callisto-rts-1.4-20161215.100207</groupId>
+            <artifactId>callisto-rts-1.4-20161215.100207</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/callisto-rts-1.4-20161215.100207-4.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>tomcat-embed-core</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/tomcat-embed-core-8.0.41.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-collections-3.2.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.metaborg.spoofax.core.uber</groupId>
+            <artifactId>org.metaborg.spoofax.core.uber</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/org.metaborg.spoofax.core.uber-2.1.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang3</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-lang3-3.4.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>httpcore</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/httpcore-4.3.3.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>green-marl-compiler-2017.01.20</groupId>
+            <artifactId>green-marl-compiler-2017.01.20</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/green-marl-compiler-2017.01.20-generic.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>slf4j-log4j12</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/slf4j-log4j12-1.7.6.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>tomcat-embed-jasper</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/tomcat-embed-jasper-8.0.41.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>tomcat-embed-logging-juli</groupId>
+            <artifactId>tomcat-embed-logging-juli</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/tomcat-embed-logging-juli-8.0.41.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>groovy-all</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/groovy-all-2.4.6.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-configuration-1.6.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>graph-query-ir-2017.01.12</groupId>
+            <artifactId>graph-query-ir-2017.01.12</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/graph-query-ir-2017.01.12-4.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/log4j-1.2.17.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-lang-2.6.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec-stripped</groupId>
+            <artifactId>commons-codec-stripped</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-codec-stripped-1.9.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-configuration2</groupId>
+            <artifactId>commons-configuration2</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/commons-configuration2-2.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>argparse4j</groupId>
+            <artifactId>argparse4j</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/argparse4j-0.5.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/javax.inject-1.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>jline</groupId>
+            <artifactId>jline</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/jline-2.12.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson-databind</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/jackson-databind-2.7.5.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>hadoop-common-2.6.0</groupId>
+            <artifactId>hadoop-common-2.6.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/hadoop-common-2.6.0-cdh5.4.4.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>hadoop-hdfs-2.6.0</groupId>
+            <artifactId>hadoop-hdfs-2.6.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/third-party/hadoop-hdfs-2.6.0-cdh5.4.4.jar</systemPath>
+        </dependency>
+
+    </dependencies>
+
+</project>

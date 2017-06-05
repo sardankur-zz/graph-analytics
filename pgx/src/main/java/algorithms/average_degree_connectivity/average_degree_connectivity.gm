@@ -1,0 +1,42 @@
+procedure average_degree_connectivity(G: graph; avgDeg: map<int, double>) : int {
+
+    int maxK = max(n: G.nodes) {n.numInNbrs() + n.numOutNbrs()};
+
+    map<int, double> running_sum;
+    
+    map<int, double> count1;
+    int i = 0;
+    while(i <= maxK) {
+        running_sum[i] = 0;
+        count1[i] = 0;
+        avgDeg[i] = 0;
+        i++;
+    }
+
+    /*
+        1. For each node, calculate average neighbour degree
+        2. For each k-degree node, calculate mean of avg degree neighbours for k
+    */
+
+    for(n : G.nodes) {
+        int k = n.numInNbrs() + n.numOutNbrs();
+        for(v : n.outNbrs) {
+            running_sum[k] +=  ((double) (v.numInNbrs() + v.numOutNbrs()))/k;
+        }
+        for(v : n.inNbrs) {
+            running_sum[k] +=  ((double) (v.numInNbrs() + v.numOutNbrs()))/k;
+        }
+        count1[k] += 1;
+    }
+
+
+    i = 0;
+    while(i <= maxK) {
+        if(count1[i] != 0) {
+            avgDeg[i] = ((double) running_sum[i]) / count1[i];
+        }
+        i++;
+    }
+
+    return 0;
+}

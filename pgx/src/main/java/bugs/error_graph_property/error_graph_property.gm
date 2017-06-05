@@ -1,0 +1,7 @@
+procedure current_flow_closeness(G1, G2: graph; prop: nodeProp<double>(G1)) : int {
+
+    // compilation errors,
+    // java.lang.IllegalArgumentException: no vertex property named closeness found for graph
+
+    return 0;
+}

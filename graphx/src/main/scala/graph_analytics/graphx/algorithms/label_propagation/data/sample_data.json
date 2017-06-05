@@ -1,0 +1,210 @@
+{
+  "directed": 0,
+  "nodes": [
+    {
+      "id": 0,
+      "label": "ABRAMSON, G"
+    },
+
+    {
+      "id": 1,
+      "label": "KUPERMAN, M"
+    },
+
+    {
+      "id": 2,
+      "label": "ACEBRON, J"
+    },
+
+    {
+      "id": 3,
+      "label": "BONILLA, L"
+    },
+
+    {
+      "id": 4,
+      "label": "PEREZVICENTE, C"
+    },
+
+    {
+      "id": 5,
+      "label": "RITORT, F"
+    },
+
+    {
+      "id": 6,
+      "label": "SPIGLER, R"
+    },
+
+    {
+      "id": 7,
+      "label": "ADAMIC, L"
+    },
+
+    {
+      "id": 8,
+      "label": "ADAR, E"
+    },
+
+    {
+      "id": 9,
+      "label": "HUBERMAN, B"
+    },
+
+    {
+      "id": 10,
+      "label": "LUKOSE, R"
+    },
+
+    {
+      "id": 11,
+      "label": "PUNIYANI, A"
+    },
+
+    {
+      "id": 12,
+      "label": "AERTSEN, A"
+    },
+
+    {
+      "id": 13,
+      "label": "GERSTEIN, G"
+    },
+
+    {
+      "id": 14,
+      "label": "HABIB, M"
+    },
+
+    {
+      "id": 15,
+      "label": "PALM, G"
+    },
+
+    {
+      "id": 16,
+      "label": "AFRAIMOVICH, V"
+    },
+
+    {
+      "id": 17,
+      "label": "VERICHEV, N"
+    },
+
+    {
+      "id": 18,
+      "label": "RABINOVICH, M"
+    },
+
+    {
+      "id": 19,
+      "label": "AGRAWAL, H"
+    },
+
+    {
+      "id": 20,
+      "label": "AHUJA, R"
+    }
+  ],
+  "edges": [
+    {
+      "source": 1,
+      "target": 0
+    },
+
+    {
+      "source": 2,
+      "target": 0
+    },
+
+    {
+      "source": 3,
+      "target": 0
+    },
+
+    {
+      "source": 4,
+      "target": 0
+    },
+
+    {
+      "source": 5,
+      "target": 0
+    },
+
+    {
+      "source": 6,
+      "target": 0
+    },
+
+    {
+      "source": 7,
+      "target": 0
+    },
+
+    {
+      "source": 8,
+      "target": 0
+    },
+
+    {
+      "source": 9,
+      "target": 0
+    },
+
+    {
+      "source": 10,
+      "target": 9
+    },
+
+    {
+      "source": 10,
+      "target": 11
+    },
+
+    {
+      "source": 12,
+      "target": 11
+    },
+
+    {
+      "source": 13,
+      "target": 11
+    },
+
+    {
+      "source": 14,
+      "target": 11
+    },
+
+    {
+      "source": 15,
+      "target": 11
+    },
+
+    {
+      "source": 16,
+      "target": 11
+    },
+
+    {
+      "source": 17,
+      "target": 11
+    },
+
+    {
+      "source": 18,
+      "target": 11
+    },
+
+    {
+      "source": 19,
+      "target": 11
+    },
+
+    {
+      "source": 20,
+      "target": 11
+    }
+  ]
+}

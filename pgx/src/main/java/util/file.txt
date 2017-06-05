@@ -1,0 +1,88 @@
+        <dependency>
+            <groupId>pgx-compiler_api-2.5.0</groupId>
+            <artifactId>pgx-compiler_api-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-compiler_api-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-gm-2.5.0</groupId>
+            <artifactId>pgx-gm-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-gm-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-algorithms-2.5.0</groupId>
+            <artifactId>pgx-algorithms-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-algorithms-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-engine-2.5.0</groupId>
+            <artifactId>pgx-engine-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-engine-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-pgql-2.5.0</groupId>
+            <artifactId>pgx-pgql-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-pgql-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-runtime-2.5.0</groupId>
+            <artifactId>pgx-runtime-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-runtime-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-file_loaders-2.5.0</groupId>
+            <artifactId>pgx-file_loaders-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-file_loaders-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-loader_api-2.5.0</groupId>
+            <artifactId>pgx-loader_api-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-loader_api-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-spark_loader-2.5.0</groupId>
+            <artifactId>pgx-spark_loader-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-spark_loader-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-hdfs-2.5.0</groupId>
+            <artifactId>pgx-hdfs-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-hdfs-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx-spark1-2.5.0</groupId>
+            <artifactId>pgx-spark1-2.5.0</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${pgx.location}/${pgx.jarlocation}/embedded/pgx-spark1-2.5.0-20170324.jar</systemPath>
+        </dependency>
+
